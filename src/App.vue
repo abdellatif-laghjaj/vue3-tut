@@ -3,7 +3,20 @@
           class="flex justify-center items-center py-2 px-4 text-white bg-blue-500 rounded-md float-right">
     show modal
   </button>
-  <Modal title="Test Modal" content="This a dynamic content" btn_text="Ok" v-if="show_modal"/>
+  <Modal v-if="show_modal" @close="toggleModal">
+    <h2>Modal</h2>
+    <p>Test content here...</p>
+    <template v-slot:btns>
+      <button
+          class="my-2 flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+        Login
+      </button>
+      <button
+          class="my-2 flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg ease-in transition delay:1000">
+        Register
+      </button>
+    </template>
+  </Modal>
 </template>
 
 <script>
