@@ -1,5 +1,5 @@
 <template>
-  <h1>Abdel<span class="text-secondary">.</span> Reaction Timer</h1>
+  <h1 class="mt-6">Abdel<span class="text-secondary">.</span> Reaction Timer</h1>
   <button class="btn btn-primary" @click="start" :disabled="is_playing">start</button>
   <Block v-if="is_playing" :delay="delay"></Block>
 </template>
@@ -33,7 +33,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
   user-select: none;
 }
 </style>
