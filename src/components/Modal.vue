@@ -1,12 +1,22 @@
 <template>
   <div class="backdrop">
     <div class="modal">
-      <p>Modal Content</p>
+      <header class="mb-3 flex items-center justify-between w-full">
+        <h1 class="text-2xl font-bold">Modal Header</h1>
+        <button class="bg-red-600 flex justify-center items-center p-0.5 rounded-md">
+          <box-icon name='x-square' type='solid' color="#fff"></box-icon>
+        </button>
+      </header>
+      <div class="modal-body">
+        <p>Modal Content</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import 'boxicons'
+
 export default {
   name: "Modal"
 }
@@ -31,6 +41,7 @@ export default {
   border-radius: 10px;
   padding: 12px 16px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
