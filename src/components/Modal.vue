@@ -1,14 +1,20 @@
 <template>
-  <div class="backdrop">
+  <div class="backdrop" @click="closeModal">
     <div class="modal">
       <header class="mb-3 flex items-center justify-between w-full">
-        <h1 class="text-2xl font-bold">Modal Header</h1>
-        <button class="bg-red-600 flex justify-center items-center p-0.5 rounded-md">
-          <box-icon name='x-square' type='solid' color="#fff"></box-icon>
+        <h1 class="text-2xl font-bold">{{ title }}</h1>
+        <button>
+          <box-icon name='x-square' type='solid' color="red"></box-icon>
         </button>
       </header>
-      <div class="modal-body">
-        <p>Modal Content</p>
+      <div class="modal-body mt-2 mb-3">
+        <p>{{ content }}</p>
+      </div>
+      <div class="modal-footer w-full">
+        <button class="flex justify-center items-center py-2 px-4 text-white bg-blue-500 rounded-md float-right"
+                @click="closeModal">
+          {{ btn_text }}
+        </button>
       </div>
     </div>
   </div>
@@ -18,7 +24,20 @@
 import 'boxicons'
 
 export default {
-  name: "Modal"
+  name: "Modal",
+  props: {
+    title: String,
+    content: String,
+    btn_text: String,
+  },
+  data() {
+    return {}
+  },
+  methods: {
+    closeModal() {
+
+    }
+  },
 }
 </script>
 
@@ -44,5 +63,9 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.modal-body {
+  font-size: 18px;
 }
 </style>
