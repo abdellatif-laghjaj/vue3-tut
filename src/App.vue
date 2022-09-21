@@ -1,8 +1,9 @@
 <template>
-  <h1 class="text-3xl font-bold underline bg-red-300">
-    Hello world!
-  </h1>
-  <h1>{{ title }}</h1>
+  <div class="flex flex-col w-3/5 justify-center items-center w-auto gap-3">
+    <input type="text" class="p-2 border rounded-md" ref="name" placeholder="name">
+    <button @click="click" class="px-4 py-2 bg-blue-600 rounded-md text-white">Ref</button>
+    <h1>{{ title }}</h1>
+  </div>
 </template>
 
 <script>
@@ -11,6 +12,11 @@ export default {
   data() {
     return {
       title: "Heeeeey",
+    }
+  },
+  methods: {
+    click() {
+      this.title = this.$refs.name;
     }
   },
 }
