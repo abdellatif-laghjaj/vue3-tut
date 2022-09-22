@@ -25,6 +25,7 @@ export default {
     },
     stopTimer() {
       clearInterval(this.timer);
+      this.$emit('end', this.reaction_time);
     },
   },
   mounted() {
