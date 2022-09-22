@@ -1,19 +1,14 @@
 <template>
-  <SingUpForm/>
 </template>
 
 <script>
-import SingUpForm from "@/components/SingUpForm";
-
 export default {
   name: 'App',
   data() {
     return {}
   },
   methods: {},
-  components: {
-    SingUpForm,
-  }
+  components: {}
 }
 </script>
 
