@@ -1,41 +1,18 @@
 <template>
-  <main class="flex flex-col justify-center items-center">
-    <h1 class="mt-6">Abdel<span class="text-secondary">.</span> Reaction Timer</h1>
-    <button class="btn btn-primary" @click="start" :disabled="is_playing">start</button>
-    <Block v-if="is_playing" :delay="delay" @end="endGame"/>
-    <results :result="reation_time" v-if="show_result"/>
-  </main>
+  <SingUpForm/>
 </template>
 
 <script>
-import Block from "@/components/Block";
-import Results from "@/components/Results";
+import SingUpForm from "@/components/SingUpForm";
 
 export default {
   name: 'App',
   data() {
-    return {
-      is_playing: false,
-      delay: null,
-      reation_time: null,
-      show_result: false,
-    }
+    return {}
   },
-  methods: {
-    start() {
-      this.delay = 2000 + (Math.random() * 4000);
-      this.is_playing = true;
-      this.show_result = false;
-    },
-    endGame(result) {
-      this.reation_time = result;
-      this.is_playing = false;
-      this.show_result = true;
-    }
-  },
+  methods: {},
   components: {
-    Block,
-    Results,
+    SingUpForm,
   }
 }
 </script>
@@ -48,6 +25,7 @@ export default {
   text-align: center;
   user-select: none;
   width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
