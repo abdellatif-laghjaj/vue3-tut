@@ -1,5 +1,5 @@
 <template>
-  <form action="">
+  <form action="" @submit.prevent="submit">
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div class="card-body">
         <h1>Registration Form</h1>
@@ -8,6 +8,11 @@
         </div>
         <div class="form-control">
           <input type="password" placeholder="password" class="input input-bordered" v-model="password" required/>
+        </div>
+        <div class="form-control" v-if="password_err">
+          <label class="label">
+            <span class="label-text-alt text-error">{{ password_err }}</span>
+          </label>
         </div>
         <div class="form-control">
           <select class="select select-bordered w-full max-w-xs" v-model="gender">
@@ -19,7 +24,7 @@
         </div>
         <div class="form-control">
           <input type="text" placeholder="skills (alt + ,)" class="input input-bordered"
-                 v-model="tmp_skill" required @keyup.alt="addSkill"/>
+                 v-model="tmp_skill" @keyup.alt="addSkill"/>
         </div>
         <div class="form-control flex flex-row gap-2 flex-wrap">
           <div class="badge badge-accent flex items-center justify-between" v-for="skill in skills">
@@ -54,6 +59,7 @@ export default {
       remember_me: false,
       tmp_skill: '',
       skills: ['html'],
+      password_err: '',
     }
   },
   methods: {
@@ -71,6 +77,18 @@ export default {
     },
     removeSkill(skill) {
       this.skills = this.skills.filter((s) => s !== skill);
+    },
+    submit() {
+      this.password_err = this.password.length < 6 ? 'Password must be at least 6 characters' : '';
+      if (!this.password_err) {
+        console.log('submit', {
+          email: this.email,
+          password: this.password,
+          skills: this.skills,
+          gender: this.gender,
+          remember_me: this.remember_me,
+        });
+      }
     }
   }
 }
