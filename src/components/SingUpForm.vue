@@ -18,6 +18,16 @@
           </select>
         </div>
         <div class="form-control">
+          <input type="text" placeholder="skills (alt + ,)" class="input input-bordered"
+                 v-model="tmp_skill" required @keyup.alt="addSkill"/>
+        </div>
+        <div class="form-control flex flex-row gap-2 flex-wrap">
+          <div class="badge badge-accent flex items-center justify-between" v-for="skill in skills">
+            <span>{{ skill }}</span>
+            <button class="btn btn-ghost btn-sm" @click="removeSkill(skill)">x</button>
+          </div>
+        </div>
+        <div class="form-control">
           <div class="form-control">
             <label class="label cursor-pointer">
               <span class="label-text">Remember me</span>
@@ -29,8 +39,6 @@
           <button class="btn btn-primary">Login</button>
         </div>
       </div>
-    </div>
-    <div class="alert alert-warning shadow-lg flex flex-col">
     </div>
   </form>
 </template>
@@ -44,6 +52,25 @@ export default {
       password: '',
       gender: 'none',
       remember_me: false,
+      tmp_skill: '',
+      skills: ['html'],
+    }
+  },
+  methods: {
+    addSkill(e) {
+      if (e.key === ',' && this.tmp_skill && this.tmp_skill !== ',') {
+        if (this.skills.length >= 5) {
+          alert('You can add only 5 skills')
+          return;
+        }
+        if (!this.skills.includes(this.tmp_skill)) {
+          this.skills.push(this.tmp_skill.trim());
+        }
+        this.tmp_skill = '';
+      }
+    },
+    removeSkill(skill) {
+      this.skills = this.skills.filter((s) => s !== skill);
     }
   }
 }
