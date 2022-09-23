@@ -6,7 +6,7 @@
         <h2 class="card-title">{{ job.title }}</h2>
         <p>{{ job.description }}</p>
         <div class="card-actions justify-end">
-          <button class="btn">Apply</button>
+          <button class="btn" @click="applyJob(job)">Apply</button>
         </div>
       </div>
     </div>
@@ -87,6 +87,12 @@ export default {
       ],
     }
   },
+  methods: {
+    applyJob(job) {
+      const id = job.id;
+      this.$router.push(`/jobs/${id}`);
+    }
+  }
 }
 </script>
 

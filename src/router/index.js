@@ -13,6 +13,11 @@ const routes = [
         component: () => import('@/views/jobs/Jobs.vue'),
     },
     {
+        path: '/jobs/:id',
+        name: 'Job',
+        component: () => import('@/views/jobs/JobDetails.vue'),
+    },
+    {
         path: '/about',
         name: 'About',
         component: () => import('@/views/About.vue'),
