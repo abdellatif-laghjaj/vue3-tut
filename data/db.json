@@ -24,6 +24,11 @@
       "id": 5,
       "title": "Software Architect",
       "description": "We are looking for a software architect who is motivated to combine the art of design with the art of programming."
+    },
+    {
+      "id": 6,
+      "title": "Software Tester",
+      "description": "We are looking for a software tester who is motivated to combine the art of design with the art of programming."
     }
   ]
 }
