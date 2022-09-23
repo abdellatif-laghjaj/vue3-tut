@@ -8,6 +8,11 @@ const routes = [
         meta: {transition: 'slide-left'},
     },
     {
+        path: '/jobs',
+        name: 'Jobs',
+        component: () => import('@/views/jobs/Jobs.vue'),
+    },
+    {
         path: '/about',
         name: 'About',
         component: () => import('@/views/About.vue'),

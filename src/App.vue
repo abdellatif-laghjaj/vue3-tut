@@ -7,7 +7,10 @@
       <div class="flex-none">
         <ul class="menu menu-horizontal p-0">
           <li>
-            <router-link to="/" class="normal-case">Home</router-link>
+            <router-link :to="{ name: 'Home' }" class="normal-case">Home</router-link>
+          </li>
+          <li>
+            <router-link to="/jobs" class="normal-case">Jobs</router-link>
           </li>
           <li>
             <router-link to="/about" class="normal-case">About</router-link>
@@ -18,7 +21,9 @@
         </ul>
       </div>
     </div>
-    <router-view/>
+    <main class="w-4/5 mx-auto">
+      <router-view/>
+    </main>
   </div>
 </template>
 
@@ -42,6 +47,7 @@ export default {
   user-select: none;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
   align-items: center;
 }
 </style>
