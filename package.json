@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "autoprefixer": "^10",
     "boxicons": "^2.1.4",
     "core-js": "^3.8.3",
