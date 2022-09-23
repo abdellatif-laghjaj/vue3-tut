@@ -29,6 +29,18 @@ const routes = [
         component: () => import('@/views/Contact.vue'),
         meta: {transition: 'slide-left'},
     },
+
+    //redirect
+    {
+        path: '/all-jobs',
+        redirect: '/jobs'
+    },
+    //404
+    {
+        path: '/:catchAll(.*)',
+        name: 'NotFound',
+        component: () => import('@/views/NotFound.vue'),
+    }
 ]
 
 const router = createRouter({
