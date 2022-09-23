@@ -10,13 +10,7 @@
             <router-link :to="{ name: 'Home' }" class="normal-case">Home</router-link>
           </li>
           <li>
-            <router-link to="/jobs" class="normal-case">Jobs</router-link>
-          </li>
-          <li>
             <router-link to="/about" class="normal-case">About</router-link>
-          </li>
-          <li>
-            <router-link to="/contact" class="normal-case">Contact</router-link>
           </li>
         </ul>
       </div>
