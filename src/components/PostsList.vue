@@ -10,12 +10,22 @@
 </template>
 
 <script setup>
+import {onMounted, onUnmounted, onUpdated} from "vue";
+
 const props = defineProps({
   posts: {type: Array}
 })
 
-//console.log(posts)
-console.log(props.posts[0].title)
+
+onMounted(() => {
+  console.log('mounted')
+})
+onUnmounted(() => {
+  console.log('unmounted')
+})
+onUpdated(() => {
+  console.log('updated')
+})
 </script>
 
 <style scoped>
