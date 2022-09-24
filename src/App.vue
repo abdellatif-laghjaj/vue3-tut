@@ -31,10 +31,6 @@
         <!-- Page content here -->
         <main class="w-4/5 mx-auto">
           <router-view/>
-          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" v-model="search"/>
-          <h2 class="font-bold text-2xl mt-5" v-for="name in filtredName" v-if="filtredName.length">{{ name }}</h2>
-          <h2 class="font-bold text-2xl mt-5" v-else>No results</h2>
-          <button class="my-3 btn gap-2" @click="click">Click</button>
         </main>
       </div>
       <div class="drawer-side">
