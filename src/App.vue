@@ -32,9 +32,7 @@
         <main class="w-4/5 mx-auto">
           <router-view v-slot="{ Component, route }">
             <transition name="fade" mode="out-in" appear>
-              <div :key="route">
-                <component :is="Component"></component>
-              </div>
+              <component :is="Component"></component>
             </transition>
           </router-view>
         </main>
@@ -95,7 +93,7 @@ const click = () => {
 }
 
 .fade-enter-active {
-  transition: ass 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .fade-leave-to {
@@ -104,7 +102,7 @@ const click = () => {
 }
 
 .fade-leave-active {
-  transition: ass 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .theme-btn {
