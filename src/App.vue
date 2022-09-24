@@ -54,12 +54,20 @@
 </template>
 
 <script setup>
-import {computed, ref} from "vue";
+import {computed, ref, watch, watchEffect} from "vue";
 
 const names = ref(['John', 'Jane', 'Jack', 'Jill', 'Peter', 'Abdellatif', 'Hamid']);
 const search = ref('');
 const filtredName = computed(() => {
   return names.value.filter(name => name.includes(search.value))
+})
+
+watch(search, (newValue, oldValue) => {
+  console.log('watch', newValue, oldValue)
+})
+
+watchEffect(() => {
+  console.log('watchEffect', search.value)
 })
 
 const click = () => {
