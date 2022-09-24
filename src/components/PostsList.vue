@@ -2,7 +2,9 @@
   <div class="post-list mx-auto">
     <div class="card w-96 bg-base-100 shadow-xl my-2 mx-auto" v-for="post in posts" :key="post.id">
       <div class="card-body">
-        <h2 class="card-title">{{ post.title }}</h2>
+        <router-link :to="{ name: 'Details', params: {id: post.id }}">
+          <h2 class="card-title">{{ post.title }}</h2>
+        </router-link>
         <p class="text-left my-2">{{ post.body }}</p>
         <div class="tags flex gap-3">
           <div class="badge badge-secondary" v-for="tag in post.tags" :key="tag">{{ tag }}</div>
