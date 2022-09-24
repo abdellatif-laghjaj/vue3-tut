@@ -1,34 +1,34 @@
 {
-  "jobs": [
+  "posts": [
     {
       "id": 1,
       "title": "Web Developer",
-      "description": "We are looking for a web developer who is motivated to combine the art of design with the art of programming."
+      "body": "We are looking for a web developer who is motivated to combine the art of design with the art of programming.",
+      "tags": [
+        "web",
+        "developer",
+        "design"
+      ]
     },
     {
       "id": 2,
       "title": "Mobile Developer",
-      "description": "We are looking for a mobile developer who is motivated to combine the art of design with the art of programming."
+      "body": "We are looking for a mobile developer who is motivated to combine the art of design with the art of programming.",
+      "tags": [
+        "mobile",
+        "android",
+        "ios"
+      ]
     },
     {
       "id": 3,
-      "title": "Software Developer",
-      "description": "We are looking for a software developer who is motivated to combine the art of design with the art of programming."
-    },
-    {
-      "id": 4,
-      "title": "Software Engineer",
-      "description": "We are looking for a software engineer who is motivated to combine the art of design with the art of programming."
-    },
-    {
-      "id": 5,
-      "title": "Software Architect",
-      "description": "We are looking for a software architect who is motivated to combine the art of design with the art of programming."
-    },
-    {
-      "id": 6,
-      "title": "Software Tester",
-      "description": "We are looking for a software tester who is motivated to combine the art of design with the art of programming."
+      "title": "Desktop Developer",
+      "body": "We are looking for a desktop developer who is motivated to combine the art of design with the art of programming.",
+      "tags": [
+        "desktop",
+        "windows",
+        "mac"
+      ]
     }
   ]
 }
