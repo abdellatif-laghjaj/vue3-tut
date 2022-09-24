@@ -31,8 +31,9 @@
         <!-- Page content here -->
         <main class="w-4/5 mx-auto">
           <router-view/>
-          <h2 class="font-bold text-2xl mt-5">{{ person.name }} | {{ person.age }}</h2>
-          <h2 class="font-bold text-2xl mt-5">{{ likes.count }}</h2>
+          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" v-model="search"/>
+          <h2 class="font-bold text-2xl mt-5" v-for="name in filtredName" v-if="filtredName.length">{{ name }}</h2>
+          <h2 class="font-bold text-2xl mt-5" v-else>No results</h2>
           <button class="my-3 btn gap-2" @click="click">Click</button>
         </main>
       </div>
@@ -40,10 +41,10 @@
         <label for="my-drawer-3" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
           <!-- Sidebar content here -->
-          <li>
+          <li class="mb-2">
             <router-link :to="{ name: 'Home' }" class="normal-case">Home</router-link>
           </li>
-          <li>
+          <li class="mb-2">
             <router-link to="/about" class="normal-case">About</router-link>
           </li>
         </ul>
@@ -53,20 +54,15 @@
 </template>
 
 <script setup>
-import {reactive, ref} from "vue";
+import {computed, ref} from "vue";
 
-const person = ref({
-  name: "Abdellatif",
-  age: 20,
-})
-
-const likes = reactive({
-  count: 0,
+const names = ref(['John', 'Jane', 'Jack', 'Jill', 'Peter', 'Abdellatif', 'Hamid']);
+const search = ref('');
+const filtredName = computed(() => {
+  return names.value.filter(name => name.includes(search.value))
 })
 
 const click = () => {
-  person.value.age++
-  likes.count++
 }
 </script>
 
