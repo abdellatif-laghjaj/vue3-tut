@@ -20,29 +20,14 @@
 </template>
 
 <script setup>
+import getPosts from "@/composables/getPosts";
 import {onMounted, onUnmounted, onUpdated, ref, watch} from "vue";
 import PostsList from "@/components/PostsList";
-import API_URL from "@/env";
 
 const checked = ref(true);
-const posts = ref([]);
-const error = ref('');
-
-const load = async () => {
-  try {
-    let data = await fetch(API_URL + '/hello')
-    if (!data.ok) {
-      throw Error("Could not fetch the data for that resource");
-    }
-
-    posts.value = await data.json();
-  } catch (err) {
-    error.value = err.message;
-    console.log(err.message)
-  }
-}
-
+const {posts, error, load} = getPosts();
 load()
+
 </script>
 
 <style scoped>

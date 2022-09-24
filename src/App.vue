@@ -82,4 +82,10 @@ const click = () => {
   overflow-x: hidden;
   align-items: center;
 }
+
+.theme-btn {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
 </style>
