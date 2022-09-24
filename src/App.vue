@@ -30,7 +30,13 @@
         </div>
         <!-- Page content here -->
         <main class="w-4/5 mx-auto">
-          <router-view/>
+          <router-view v-slot="{ Component, route }">
+            <transition name="fade" mode="out-in" appear>
+              <div :key="route">
+                <component :is="Component"></component>
+              </div>
+            </transition>
+          </router-view>
         </main>
       </div>
       <div class="drawer-side">
@@ -81,6 +87,24 @@ const click = () => {
   height: 100vh;
   overflow-x: hidden;
   align-items: center;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.fade-enter-active {
+  transition: ass 0.5s ease;
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.fade-leave-active {
+  transition: ass 0.5s ease;
 }
 
 .theme-btn {
